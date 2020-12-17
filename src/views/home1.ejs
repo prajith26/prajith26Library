@@ -25,20 +25,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/home" class="navbar-brand">Home</a>
+      <a href="/home1" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <%for(i=0;i<nav.length-1;i++){%>
+        <%for(i=0;i<nav4.length;i++){%>
         <li>
-          <a href="<%=nav[i].link%>" id="link"><%=nav[i].name%></a>
+          <a href="<%=nav4[i].link%>" id="link"><%=nav4[i].name%></a>
         </li>
-        <%}%>
-        
-          <li>
-            <a href="<%=nav2[0].link%>" id="link"><%=nav2[0].name%></a>
-          </li>
-          
+        <%}%>   
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">

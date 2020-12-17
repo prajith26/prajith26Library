@@ -1,8 +1,8 @@
 const express = require("express");
-const authorRouter = express.Router();
+const authorRouter1 = express.Router();
 const Authordata = require("../model/Authordata");
 
-function router(nav, nav1, nav2, nav3) {
+function router(nav4) {
     // var authors = [
     //     {
     //         name:"Joseph barabar",
@@ -66,66 +66,34 @@ function router(nav, nav1, nav2, nav3) {
     //     }
     // ]
 
-    authorRouter.get("/", function (req, res) {
+    authorRouter1.get("/", function (req, res) {
         Authordata.find()
             .then(function (authors) {
-                res.render("authors",
+                res.render("authors1",
                     {
-                        nav,
+                        nav4,
                         title: 'Library',
                         authors,
-                        nav1,
-                        nav2
                     });
             });
 
     });
-    authorRouter.get("/addAuthor", function (req, res) {
-        res.render("addAuthor",
-            {
-                nav,
-                title: 'Library',
-                nav1,
-                nav2
-                //add author link create
-            });
-    });
-
-
-
-    authorRouter.post("/add", function (req, res) {
-
-        var item = {
-            name: req.body.name,
-            nationality: req.body.nationality,
-            genre: req.body.genre,
-            works: req.body.works,
-            image: req.body.image
-        };
-        var author = Authordata(item);
-        author.save();
-        res.redirect('/authors');
-    });
-
-
-
-    authorRouter.get("/:id", function (req, res) {
+    
+    
+    authorRouter1.get("/:id", function (req, res) {
         const id = req.params.id;
         Authordata.findOne({ _id: id })
             .then(function (author) {
-                res.render("author",
+                res.render("author1",
                     {
-                        nav,
+                        nav4,
                         title: 'Library',
-                        author,
-                        nav1,
-                        nav2,
-                        nav3
+                        author
                     });
             });
 
     });
 
-    return authorRouter;
+    return authorRouter1;
 }
 module.exports = router;

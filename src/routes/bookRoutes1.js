@@ -1,22 +1,10 @@
 const express = require("express");
-// const multer = require('multer'); // multer
-// const upload = multer({dest: 'Images/'});
-// const path = require('path');    // path
-const booksRouter = express.Router();
+
+const booksRouter1 = express.Router();
 
 const Bookdata = require("../model/Bookdata");
 
-//Set Storage Engine
-// const storage = multer.diskStorage({
-//     destination: './public/Images/',
-//     // filename: function(req)
-// });
-
-// const upload = multer({
-//     storage: storage
-// }).single('image')
-
-function router(nav,nav1,nav2,nav3){
+function router(nav4){
     // var books = [
     //     {
     //         title:"Tom n Jerry",
@@ -80,69 +68,34 @@ function router(nav,nav1,nav2,nav3){
     //     }
     // ]
     
-    booksRouter.get("/",function(req,res){
+    booksRouter1.get("/",function(req,res){
         Bookdata.find()
         .then(function(books){
-            res.render("books",
+            res.render("books1",
             {
-                nav,
+                nav4,
                 title:'Library',
-                books,
-                nav1,
-                nav2
+                books
             });
         })        
     });
-    
-    
-    
-
-    booksRouter.get("/addBook",function(req,res){
-        res.render("addBook",
-        {
-            nav,
-            title:'Library',
-            nav1,
-            nav2
-        });
-    });
-
-    booksRouter.post("/add",function(req,res){
-        // upload(req.body.image);
-        // console.log(req.file)
-        var item = {
-        title: req.body.title,
-        author: req.body.author,
-        genre: req.body.genre,
-        language: req.body.language,
-        image: req.body.image
-        };
-        var book = Bookdata(item);
-        book.save();
-        res.redirect('/books');
-        // res.send("hey");
-    });
-
-    booksRouter.get("/:id",function(req,res){
+       
+    booksRouter1.get("/:id",function(req,res){
         const id = req.params.id;
         Bookdata.findOne({_id:id})
         .then(function(book){
-            res.render("book",
+            res.render("book1",
             {
-                nav,
+                nav4,
                 title:'Library',
-                book,
-                nav1,
-                nav2,
-                nav3
+                book
             });
         });
         
     });
+  
 
-   
-
-    return booksRouter;
+    return booksRouter1;
 }
 
 module.exports = router;

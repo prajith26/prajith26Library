@@ -30,16 +30,12 @@
             </div>
             <nav class="collapse navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
-                    <%for(i=0;i<nav.length;i++){%>
+                    <%for(i=0;i<nav.length-1;i++){%>
                     <li>
                         <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
                     </li>
                     <%}%>
-        <%for(i=0;i<nav1.length;i++){%>
-                    <li>
-                        <a href="<%=nav1[i].link%>"><%=nav1[i].name%></a>
-                    </li>
-                    <%}%>
+        
                     <li>
                       <a href="<%=nav2[0].link%>"><%=nav2[0].name%></a>
                     </li>
@@ -116,39 +112,39 @@
          <!-- add -->
             <div class="center">
                 <h1>Add New Author</h1>
-    <form>
+    <form method="POST" action="/authors/add">
         <div class="txt_field">
-            <input type="text" required>
+            <input type="text" name="name" required>
             <span></span>
             <label>Name</label>
         </div>
         <div class="txt_field">
-            <input type="Email ID" required>
+            <input type="Email ID" name="email" required>
             <span></span>
             <label>Email ID</label>
         </div>
         <div class="txt_field">
-            <input type="text" required>
+            <input type="text" name="nationality" required>
             <span></span>
             <label>Nationality</label>
         </div>
         <div class="txt_field">
-            <input type="text" required>
+            <input type="text" name="language" required>
             <span></span>
             <label>Language</label>
         </div>
         <div class="txt_field">
-            <input type="text" required>
+            <input type="text" name="genre" required>
             <span></span>
             <label>Genre</label>
         </div>
         <div class="txt_field">
-            <input type="text" required>
+            <input type="text" name="works" required>
             <span></span>
             <label>Notable Works</label>
         </div>
         <div class="txt_field">
-            <input type="text" required>
+            <input type="text" name="achievements" required>
             <span></span>
             <label>Achievements</label>
         </div>
@@ -156,7 +152,7 @@
             <label id="book_img">Add Author Image</label>
             <br>
         
-            <input type="file" accept="image/*" required>
+            <input type="file" accept="image/*" name="image" required>
             <br>
             <br>
         </div>

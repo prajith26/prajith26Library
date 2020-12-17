@@ -7,7 +7,7 @@
     <title><%=title%></title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -91,48 +91,10 @@
         <div class="panel-body">
 <div class="row">    
   <br>
-  <div class="center">
-    <h1>Signup</h1>
-    <form action="/signup/add" method="POST">
-        <div class="txt_field">
-            <input type="text" id="name" name="name" required>
-            <span></span>
-            <label>Name</label>
-            <div id="name_msg"></div>
-        </div>
-        <div class="txt_field">
-            <input type="text" id="email" name="email" required>
-            <span></span>
-            <label>Email ID</label>
-            <div id="email_msg"></div>
-        </div>
-        <div class="txt_field">
-            <input type="number" id="mobile" name="mobile" required>
-            <span></span>
-            <label>Mobile Number</label>
-            <div id="mobile_msg"></div>
-        </div>
-        <div class="txt_field">
-            <input type="password" id="pass1" name="pwd" required>
-            <span></span>
-            <label>Enter Password</label>
-            <div id="pass1_msg"></div>
-        </div>
-        <div class="txt_field">
-            <input type="password" id="pass2" name="Repwd" required>
-            <span></span>
-            <label>Re-enter Password</label>
-            <div id="pass2_msg"></div>
-        </div>
-        <div class="pass" id="pass"><input type="checkbox" class="pass" id="check"> I agree to the terms and conditions</div>
-        <div id="check_msg"></div>
-        <input type="submit" value="Signup">
-        <br>
-        <br>
-        <br>
-        
-    </form>
-</div> 
+  
+  <div id="warning_msg">
+    <%=mssg%>
+  </div>
 
 
 

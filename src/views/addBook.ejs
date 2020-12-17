@@ -27,19 +27,16 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <%for(i=0;i<nav.length;i++){%>
+        <%for(i=0;i<nav.length-1;i++){%>
         <li>
           <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
         </li>
         <%}%>
-        <%for(i=0;i<nav1.length;i++){%>
-          <li>
-            <a href="<%=nav1[i].link%>"><%=nav1[i].name%></a>
-          </li>
-          <%}%>
+       
           <li>
             <a href="<%=nav2[0].link%>"><%=nav2[0].name%></a>
           </li>
+          
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -125,24 +122,24 @@
             <!--/Add Book-->
           <div class="center">
             <h1>Add New Book</h1>
-            <form method="post">
+            <form method="POST" action="/books/add">
                 <div class="txt_field">
-                    <input type="text" required>
+                    <input type="text" name="title" required>
                     <span></span>
                     <label>Book Name</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" required>
+                    <input type="text" name="author" required>
                     <span></span>
                     <label>Author</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" required>
+                    <input type="text" name="language" required>
                     <span></span>
                     <label>Language</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" required>
+                    <input type="text" name="genre" required>
                     <span></span>
                     <label>Genre</label>
                 </div>
@@ -150,7 +147,7 @@
                     <label id="book_img">Add Book Image</label>
                     <br>
                 
-                    <input type="file" accept="image/*" required>
+                    <input type="file" name="image" accept="image/*" required>
                     <br>
                     <br>
                 </div>
